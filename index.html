@@ -1079,6 +1079,56 @@
       box-shadow: 0 8px 32px rgba(255,107,53,0.4);
     }
 
+    /* ===== THANKS MODAL ===== */
+    .thanks-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(26,26,46,0.85);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .thanks-overlay.active {
+      display: flex;
+    }
+
+    .thanks-modal {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 56px 48px;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.3);
+      animation: modalIn 0.4s ease;
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.9) translateY(20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .thanks-icon {
+      margin-bottom: 24px;
+    }
+
+    .thanks-modal h2 {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .thanks-modal p {
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 968px) {
       .header-nav { display: none; }
@@ -1574,7 +1624,7 @@
             <input type="hidden" name="_subject" value="【CODE N BUTTER】新規お問い合わせ">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="">
+            <input type="hidden" name="_next" id="formNext" value="">
             <input type="text" name="_honey" style="display:none">
             <div class="form-row">
               <div class="form-group">
@@ -1661,6 +1711,18 @@
     </div>
   </footer>
 
+  <!-- THANKS MODAL -->
+  <div class="thanks-overlay" id="thanksOverlay">
+    <div class="thanks-modal">
+      <div class="thanks-icon">
+        <svg width="48" height="48" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" stroke="#D4E157" stroke-width="2"/><path stroke="#D4E157" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 13l3 3 7-7"/></svg>
+      </div>
+      <h2>お問い合わせありがとうございます</h2>
+      <p>内容を確認次第、担当者より<strong>1営業日以内</strong>にご連絡いたします。</p>
+      <a href="#" class="btn btn-primary" onclick="closeThanks(); return false;">ページに戻る</a>
+    </div>
+  </div>
+
   <!-- FLOATING CTA -->
   <div class="floating-cta" id="floatingCta">
     <a href="#contact" class="btn btn-accent">無料相談はこちら</a>
@@ -1713,7 +1775,20 @@
       });
     });
 
-    // Form is handled by Formsubmit.co — no JS needed
+    // Set _next to current page with ?thanks=1
+    document.getElementById('formNext').value = window.location.origin + window.location.pathname + '?thanks=1';
+
+    // Show thanks modal if redirected back from Formsubmit
+    if (new URLSearchParams(window.location.search).has('thanks')) {
+      document.getElementById('thanksOverlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeThanks() {
+      document.getElementById('thanksOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+      history.replaceState(null, '', window.location.pathname);
+    }
   </script>
 </body>
 </html>
