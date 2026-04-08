@@ -911,89 +911,18 @@
       box-shadow: 0 24px 60px rgba(0,0,0,0.2);
     }
 
-    .contact-form h3 {
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 24px;
-      text-align: center;
+    .formrun-embed-wrapper {
+      min-height: 500px;
     }
 
-    .form-group {
-      margin-bottom: 16px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 6px;
-    }
-
-    .form-group label .required {
-      color: var(--accent);
-      margin-left: 2px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    .formrun-embed-wrapper .formrun-embed {
       width: 100%;
-      padding: 12px 16px;
-      border: 2px solid #E8E8E8;
-      border-radius: 8px;
-      font-size: 15px;
-      font-family: inherit;
-      transition: border-color 0.2s;
-      background: #FAFAFA;
     }
 
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      background: var(--white);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .form-submit {
-      width: 100%;
-      padding: 16px;
-      background: var(--dark);
-      color: var(--white);
+    .formrun-embed-wrapper iframe {
+      width: 100% !important;
+      min-height: 600px;
       border: none;
-      border-radius: 10px;
-      font-size: 17px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: all 0.3s;
-      margin-top: 8px;
-      font-family: inherit;
-    }
-
-    .form-submit:hover {
-      background: var(--dark-blue);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(26,26,46,0.3);
-    }
-
-    .form-note {
-      font-size: 12px;
-      color: var(--text-light);
-      text-align: center;
-      margin-top: 12px;
     }
 
     /* ===== FOOTER ===== */
@@ -1077,56 +1006,6 @@
 
     .floating-cta .btn {
       box-shadow: 0 8px 32px rgba(255,107,53,0.4);
-    }
-
-    /* ===== THANKS MODAL ===== */
-    .thanks-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: rgba(26,26,46,0.85);
-      backdrop-filter: blur(8px);
-      align-items: center;
-      justify-content: center;
-    }
-
-    .thanks-overlay.active {
-      display: flex;
-    }
-
-    .thanks-modal {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 56px 48px;
-      max-width: 480px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.3);
-      animation: modalIn 0.4s ease;
-    }
-
-    @keyframes modalIn {
-      from { opacity: 0; transform: scale(0.9) translateY(20px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-
-    .thanks-icon {
-      margin-bottom: 24px;
-    }
-
-    .thanks-modal h2 {
-      font-size: 24px;
-      font-weight: 900;
-      color: var(--dark);
-      margin-bottom: 12px;
-    }
-
-    .thanks-modal p {
-      font-size: 15px;
-      color: var(--text-light);
-      line-height: 1.7;
-      margin-bottom: 32px;
     }
 
     /* ===== RESPONSIVE ===== */
@@ -1617,57 +1496,9 @@
             <li>最短当日導入・当日運用開始</li>
           </ul>
         </div>
-        <div class="contact-form">
-          <h3>無料相談のお申し込み</h3>
-          <form id="contactForm" action="https://formsubmit.co/codenbutter@a1growth.jp" method="POST">
-            <!-- Formsubmit.co settings -->
-            <input type="hidden" name="_subject" value="【CODE N BUTTER】新規お問い合わせ">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" id="formNext" value="">
-            <input type="text" name="_honey" style="display:none">
-            <div class="form-row">
-              <div class="form-group">
-                <label>お名前<span class="required">*</span></label>
-                <input type="text" name="お名前" placeholder="山田 太郎" required>
-              </div>
-              <div class="form-group">
-                <label>会社名<span class="required">*</span></label>
-                <input type="text" name="会社名" placeholder="株式会社〇〇" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>メールアドレス<span class="required">*</span></label>
-                <input type="email" name="メールアドレス" placeholder="example@company.com" required>
-              </div>
-              <div class="form-group">
-                <label>電話番号</label>
-                <input type="tel" name="電話番号" placeholder="03-1234-5678">
-              </div>
-            </div>
-            <div class="form-group">
-              <label>ECサイトURL</label>
-              <input type="url" name="ECサイトURL" placeholder="https://your-ec-site.com">
-            </div>
-            <div class="form-group">
-              <label>ご関心のある課題</label>
-              <select name="ご関心のある課題">
-                <option value="">選択してください</option>
-                <option value="CVR改善">CVR改善</option>
-                <option value="カゴ落ち防止">カゴ落ち防止</option>
-                <option value="施策のスピードアップ">施策のスピードアップ</option>
-                <option value="広告費の最適化">広告費の最適化</option>
-                <option value="その他">その他</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>ご質問・ご要望</label>
-              <textarea name="ご質問・ご要望" placeholder="ご自由にお書きください"></textarea>
-            </div>
-            <button type="submit" class="form-submit">無料相談を申し込む</button>
-            <p class="form-note">※ PoC参加企業数には上限があります。お早めにお申し込みください。</p>
-          </form>
+        <div class="contact-form formrun-embed-wrapper">
+          <div class="formrun-embed" data-formrun-form="@masahiro-shibata-LVOBA5NWXvXiQEW2iNs1" data-formrun-redirect="false"></div>
+          <script src="https://sdk.form.run/js/v2/embed.js"></script>
         </div>
       </div>
     </div>
@@ -1710,18 +1541,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- THANKS MODAL -->
-  <div class="thanks-overlay" id="thanksOverlay">
-    <div class="thanks-modal">
-      <div class="thanks-icon">
-        <svg width="48" height="48" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" stroke="#D4E157" stroke-width="2"/><path stroke="#D4E157" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 13l3 3 7-7"/></svg>
-      </div>
-      <h2>お問い合わせありがとうございます</h2>
-      <p>内容を確認次第、担当者より<strong>1営業日以内</strong>にご連絡いたします。</p>
-      <a href="#" class="btn btn-primary" onclick="closeThanks(); return false;">ページに戻る</a>
-    </div>
-  </div>
 
   <!-- FLOATING CTA -->
   <div class="floating-cta" id="floatingCta">
@@ -1775,20 +1594,7 @@
       });
     });
 
-    // Set _next to current page with ?thanks=1
-    document.getElementById('formNext').value = window.location.origin + window.location.pathname + '?thanks=1';
-
-    // Show thanks modal if redirected back from Formsubmit
-    if (new URLSearchParams(window.location.search).has('thanks')) {
-      document.getElementById('thanksOverlay').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeThanks() {
-      document.getElementById('thanksOverlay').classList.remove('active');
-      document.body.style.overflow = '';
-      history.replaceState(null, '', window.location.pathname);
-    }
+    // Form is handled by formrun embed
   </script>
 </body>
 </html>
