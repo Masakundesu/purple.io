@@ -179,7 +179,7 @@
 
     /* ===== HERO ===== */
     .hero {
-      padding: 140px 0 80px;
+      padding: 110px 0 48px;
       background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
       position: relative;
       overflow: hidden;
@@ -214,6 +214,17 @@
       z-index: 1;
     }
 
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -243,11 +254,11 @@
     }
 
     .hero h1 {
-      font-size: clamp(32px, 5vw, 56px);
+      font-size: clamp(26px, 3.2vw, 40px);
       font-weight: 900;
       color: var(--white);
       line-height: 1.3;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .hero h1 .highlight {
@@ -255,55 +266,58 @@
     }
 
     .hero-sub {
-      font-size: clamp(16px, 2vw, 20px);
+      font-size: clamp(13px, 1.5vw, 15px);
       color: rgba(255,255,255,0.75);
-      margin-bottom: 40px;
-      max-width: 600px;
+      margin-bottom: 24px;
+      max-width: 500px;
       line-height: 1.7;
     }
 
     .hero-cta {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 56px;
+      margin-bottom: 24px;
+    }
+
+    .hero-cta .btn-large {
+      padding: 14px 32px;
+      font-size: 15px;
     }
 
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 700px;
+      gap: 12px;
     }
 
     .hero-stat {
       text-align: center;
-      padding: 24px 16px;
+      padding: 14px 10px;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
+      border-radius: 10px;
       backdrop-filter: blur(10px);
     }
 
     .hero-stat .number {
       font-family: 'Inter', sans-serif;
-      font-size: clamp(28px, 3.5vw, 40px);
+      font-size: clamp(22px, 2.5vw, 30px);
       font-weight: 900;
       color: var(--primary);
       line-height: 1.2;
     }
 
     .hero-stat .label {
-      font-size: 13px;
+      font-size: 11px;
       color: rgba(255,255,255,0.65);
-      margin-top: 6px;
+      margin-top: 4px;
       font-weight: 500;
     }
 
     /* ===== DASHBOARD MOCKUP ===== */
     .dashboard-mockup {
-      margin-top: 56px;
-      max-width: 960px;
+      width: 100%;
     }
 
     .dash-window {
@@ -350,13 +364,13 @@
 
     .dash-body {
       display: flex;
-      min-height: 340px;
+      min-height: 280px;
     }
 
     .dash-sidebar {
-      width: 180px;
+      width: 140px;
       background: #fff;
-      padding: 16px 0;
+      padding: 12px 0;
       flex-shrink: 0;
       border-right: 1px solid #eee;
     }
@@ -417,7 +431,7 @@
     .dash-main {
       flex: 1;
       background: #f8f8fa;
-      padding: 20px 24px;
+      padding: 14px 16px;
       overflow: hidden;
     }
 
@@ -1260,6 +1274,16 @@
     @media (max-width: 968px) {
       .header-nav { display: none; }
 
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero-right {
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
       .hero-stats {
         grid-template-columns: repeat(3, 1fr);
         gap: 12px;
@@ -1362,119 +1386,124 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero-badge">EC特化 Growth SaaS</div>
-      <h1>
-        広告費を増やさずに<br>
-        <span class="highlight">ECのCVRを上げる</span>方法
-      </h1>
-      <p class="hero-sub">
-        ノーコード・開発チーム不要。ドラッグ&ドロップで3分作成。<br>
-        マーケターが自ら運用できるオンサイトマーケティングツール。
-      </p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn btn-accent btn-large">無料で相談する</a>
-        <a href="#features" class="btn btn-outline btn-large" style="color:#fff;border-color:rgba(255,255,255,0.3);">機能を見る</a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="number">+78%</div>
-          <div class="label">CVR改善</div>
-        </div>
-        <div class="hero-stat">
-          <div class="number">+27%</div>
-          <div class="label">売上向上</div>
-        </div>
-        <div class="hero-stat">
-          <div class="number">4,500+</div>
-          <div class="label">韓国導入社数</div>
-        </div>
-      </div>
-
-      <!-- Dashboard Mockup -->
-      <div class="dashboard-mockup">
-        <div class="dash-window">
-          <div class="dash-titlebar">
-            <div class="dash-dots"><span></span><span></span><span></span></div>
-            <div class="dash-url">codenbutter.com/dashboard</div>
+      <div class="hero-layout">
+        <div class="hero-left">
+          <div class="hero-badge">EC特化 Growth SaaS</div>
+          <h1>
+            広告費を増やさずに<br>
+            <span class="highlight">ECのCVRを上げる</span>方法
+          </h1>
+          <p class="hero-sub">
+            ノーコード・開発チーム不要。ドラッグ&ドロップで3分作成。<br>
+            マーケターが自ら運用できるオンサイトマーケティングツール。
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-accent btn-large">無料で相談する</a>
+            <a href="#features" class="btn btn-outline btn-large" style="color:#fff;border-color:rgba(255,255,255,0.3);">機能を見る</a>
           </div>
-          <div class="dash-body">
-            <div class="dash-sidebar">
-              <div class="dash-logo-area">
-                <div class="dash-logo-icon">CB</div>
-                <span>CODE N BUTTER</span>
-              </div>
-              <div class="dash-nav-item active">ダッシュボード</div>
-              <div class="dash-nav-group">キャンペーン</div>
-              <div class="dash-nav-item">ポップアップ</div>
-              <div class="dash-nav-item">バナー</div>
-              <div class="dash-nav-item">コレクション</div>
-              <div class="dash-nav-group">統計</div>
-              <div class="dash-nav-item">キャンペーン統計</div>
-              <div class="dash-nav-item">ファネル分析</div>
-              <div class="dash-nav-group">AI</div>
-              <div class="dash-nav-item">AI CONI</div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="number">+78%</div>
+              <div class="label">CVR改善</div>
             </div>
-            <div class="dash-main">
-              <div class="dash-header-row">
-                <div>
-                  <div class="dash-greeting">ダッシュボード</div>
-                  <div class="dash-date">現在リリース中のキャンペーン数</div>
-                </div>
+            <div class="hero-stat">
+              <div class="number">+27%</div>
+              <div class="label">売上向上</div>
+            </div>
+            <div class="hero-stat">
+              <div class="number">4,500+</div>
+              <div class="label">韓国導入社数</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Mockup -->
+        <div class="hero-right">
+          <div class="dashboard-mockup">
+            <div class="dash-window">
+              <div class="dash-titlebar">
+                <div class="dash-dots"><span></span><span></span><span></span></div>
+                <div class="dash-url">codenbutter.com/dashboard</div>
               </div>
-              <div class="dash-campaign-cards">
-                <div class="dash-camp-card">
-                  <div class="dash-camp-label">ポップアップ</div>
-                  <div class="dash-camp-num">12</div>
+              <div class="dash-body">
+                <div class="dash-sidebar">
+                  <div class="dash-logo-area">
+                    <div class="dash-logo-icon">CB</div>
+                    <span>CODE N BUTTER</span>
+                  </div>
+                  <div class="dash-nav-item active">ダッシュボード</div>
+                  <div class="dash-nav-group">キャンペーン</div>
+                  <div class="dash-nav-item">ポップアップ</div>
+                  <div class="dash-nav-item">バナー</div>
+                  <div class="dash-nav-item">コレクション</div>
+                  <div class="dash-nav-group">統計</div>
+                  <div class="dash-nav-item">キャンペーン統計</div>
+                  <div class="dash-nav-item">ファネル分析</div>
+                  <div class="dash-nav-group">AI</div>
+                  <div class="dash-nav-item">AI CONI</div>
                 </div>
-                <div class="dash-camp-card">
-                  <div class="dash-camp-label">バナー</div>
-                  <div class="dash-camp-num">8</div>
-                </div>
-                <div class="dash-camp-card">
-                  <div class="dash-camp-label">コレクション</div>
-                  <div class="dash-camp-num">5</div>
-                </div>
-                <div class="dash-camp-card">
-                  <div class="dash-camp-label">イベントページ</div>
-                  <div class="dash-camp-num">3</div>
-                </div>
-                <div class="dash-camp-card">
-                  <div class="dash-camp-label">フォーム</div>
-                  <div class="dash-camp-num">4</div>
-                </div>
-              </div>
-              <div class="dash-content-row">
-                <div class="dash-chart-area">
-                  <div class="dash-chart-title">サイトサマリー</div>
-                  <div class="dash-chart-subtitle">過去1週間の売上は ¥2,847,200 です</div>
-                  <div class="dash-chart">
-                    <svg viewBox="0 0 400 120" class="dash-chart-svg">
-                      <defs>
-                        <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stop-color="#D4E157" stop-opacity="0.3"/>
-                          <stop offset="100%" stop-color="#D4E157" stop-opacity="0.02"/>
-                        </linearGradient>
-                      </defs>
-                      <path d="M0,100 L57,85 L114,70 L171,55 L228,40 L285,25 L342,30 L400,15 L400,120 L0,120Z" fill="url(#chartGrad)"/>
-                      <polyline points="0,100 57,85 114,70 171,55 228,40 285,25 342,30 400,15" fill="none" stroke="#D4E157" stroke-width="2.5"/>
-                      <circle cx="400" cy="15" r="4" fill="#D4E157"/>
-                    </svg>
+                <div class="dash-main">
+                  <div class="dash-header-row">
+                    <div>
+                      <div class="dash-greeting">ダッシュボード</div>
+                      <div class="dash-date">現在リリース中のキャンペーン数</div>
+                    </div>
+                  </div>
+                  <div class="dash-campaign-cards">
+                    <div class="dash-camp-card">
+                      <div class="dash-camp-label">ポップアップ</div>
+                      <div class="dash-camp-num">12</div>
+                    </div>
+                    <div class="dash-camp-card">
+                      <div class="dash-camp-label">バナー</div>
+                      <div class="dash-camp-num">8</div>
+                    </div>
+                    <div class="dash-camp-card">
+                      <div class="dash-camp-label">コレクション</div>
+                      <div class="dash-camp-num">5</div>
+                    </div>
+                    <div class="dash-camp-card">
+                      <div class="dash-camp-label">イベントページ</div>
+                      <div class="dash-camp-num">3</div>
+                    </div>
+                    <div class="dash-camp-card">
+                      <div class="dash-camp-label">フォーム</div>
+                      <div class="dash-camp-num">4</div>
+                    </div>
+                  </div>
+                  <div class="dash-content-row">
+                    <div class="dash-chart-area">
+                      <div class="dash-chart-title">サイトサマリー</div>
+                      <div class="dash-chart-subtitle">過去1週間の売上は ¥2,847,200 です</div>
+                      <div class="dash-chart">
+                        <svg viewBox="0 0 400 120" class="dash-chart-svg">
+                          <defs>
+                            <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stop-color="#D4E157" stop-opacity="0.3"/>
+                              <stop offset="100%" stop-color="#D4E157" stop-opacity="0.02"/>
+                            </linearGradient>
+                          </defs>
+                          <path d="M0,100 L57,85 L114,70 L171,55 L228,40 L285,25 L342,30 L400,15 L400,120 L0,120Z" fill="url(#chartGrad)"/>
+                          <polyline points="0,100 57,85 114,70 171,55 228,40 285,25 342,30 400,15" fill="none" stroke="#D4E157" stroke-width="2.5"/>
+                          <circle cx="400" cy="15" r="4" fill="#D4E157"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="dash-visitors">
+                      <div class="dash-chart-title">訪問概要</div>
+                      <div class="dash-visitor-row"><span>直接訪問</span><span class="dash-v-bar" style="width:70%"></span><span>1,842</span></div>
+                      <div class="dash-visitor-row"><span>Google</span><span class="dash-v-bar" style="width:45%"></span><span>1,204</span></div>
+                      <div class="dash-visitor-row"><span>Instagram</span><span class="dash-v-bar" style="width:25%"></span><span>687</span></div>
+                      <div class="dash-visitor-row"><span>Facebook</span><span class="dash-v-bar" style="width:15%"></span><span>342</span></div>
+                      <div class="dash-visitor-row"><span>LINE</span><span class="dash-v-bar" style="width:10%"></span><span>198</span></div>
+                    </div>
                   </div>
                 </div>
-                <div class="dash-visitors">
-                  <div class="dash-chart-title">訪問概要</div>
-                  <div class="dash-visitor-row"><span>直接訪問</span><span class="dash-v-bar" style="width:70%"></span><span>1,842</span></div>
-                  <div class="dash-visitor-row"><span>Google</span><span class="dash-v-bar" style="width:45%"></span><span>1,204</span></div>
-                  <div class="dash-visitor-row"><span>Instagram</span><span class="dash-v-bar" style="width:25%"></span><span>687</span></div>
-                  <div class="dash-visitor-row"><span>Facebook</span><span class="dash-v-bar" style="width:15%"></span><span>342</span></div>
-                  <div class="dash-visitor-row"><span>LINE</span><span class="dash-v-bar" style="width:10%"></span><span>198</span></div>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
