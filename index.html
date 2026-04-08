@@ -1569,45 +1569,51 @@
         </div>
         <div class="contact-form">
           <h3>無料相談のお申し込み</h3>
-          <form id="contactForm" action="#" method="post">
+          <form id="contactForm" action="https://formsubmit.co/codenbutter@a1growth.com" method="POST">
+            <!-- Formsubmit.co settings -->
+            <input type="hidden" name="_subject" value="【CODE N BUTTER】新規お問い合わせ">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="">
+            <input type="text" name="_honey" style="display:none">
             <div class="form-row">
               <div class="form-group">
                 <label>お名前<span class="required">*</span></label>
-                <input type="text" name="name" placeholder="山田 太郎" required>
+                <input type="text" name="お名前" placeholder="山田 太郎" required>
               </div>
               <div class="form-group">
                 <label>会社名<span class="required">*</span></label>
-                <input type="text" name="company" placeholder="株式会社〇〇" required>
+                <input type="text" name="会社名" placeholder="株式会社〇〇" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
                 <label>メールアドレス<span class="required">*</span></label>
-                <input type="email" name="email" placeholder="example@company.com" required>
+                <input type="email" name="メールアドレス" placeholder="example@company.com" required>
               </div>
               <div class="form-group">
                 <label>電話番号</label>
-                <input type="tel" name="phone" placeholder="03-1234-5678">
+                <input type="tel" name="電話番号" placeholder="03-1234-5678">
               </div>
             </div>
             <div class="form-group">
               <label>ECサイトURL</label>
-              <input type="url" name="site_url" placeholder="https://your-ec-site.com">
+              <input type="url" name="ECサイトURL" placeholder="https://your-ec-site.com">
             </div>
             <div class="form-group">
               <label>ご関心のある課題</label>
-              <select name="interest">
+              <select name="ご関心のある課題">
                 <option value="">選択してください</option>
-                <option value="cvr">CVR改善</option>
-                <option value="cart">カゴ落ち防止</option>
-                <option value="speed">施策のスピードアップ</option>
-                <option value="cost">広告費の最適化</option>
-                <option value="other">その他</option>
+                <option value="CVR改善">CVR改善</option>
+                <option value="カゴ落ち防止">カゴ落ち防止</option>
+                <option value="施策のスピードアップ">施策のスピードアップ</option>
+                <option value="広告費の最適化">広告費の最適化</option>
+                <option value="その他">その他</option>
               </select>
             </div>
             <div class="form-group">
               <label>ご質問・ご要望</label>
-              <textarea name="message" placeholder="ご自由にお書きください"></textarea>
+              <textarea name="ご質問・ご要望" placeholder="ご自由にお書きください"></textarea>
             </div>
             <button type="submit" class="form-submit">無料相談を申し込む</button>
             <p class="form-note">※ PoC参加企業数には上限があります。お早めにお申し込みください。</p>
@@ -1707,33 +1713,7 @@
       });
     });
 
-    // Form submit handler — send via mailto
-    document.getElementById('contactForm').addEventListener('submit', e => {
-      e.preventDefault();
-      const f = e.target;
-      const data = {
-        name: f.name.value,
-        company: f.company.value,
-        email: f.email.value,
-        phone: f.phone.value,
-        site_url: f.site_url.value,
-        interest: f.interest.value,
-        message: f.message.value
-      };
-      const body = [
-        `【お名前】${data.name}`,
-        `【会社名】${data.company}`,
-        `【メールアドレス】${data.email}`,
-        `【電話番号】${data.phone || '未記入'}`,
-        `【ECサイトURL】${data.site_url || '未記入'}`,
-        `【ご関心のある課題】${data.interest || '未選択'}`,
-        `【ご質問・ご要望】`,
-        data.message || 'なし'
-      ].join('\n');
-      const subject = encodeURIComponent(`【CODE N BUTTER】お問い合わせ: ${data.company} ${data.name}様`);
-      const mailBody = encodeURIComponent(body);
-      window.location.href = `mailto:codenbutter@a1growth.com?subject=${subject}&body=${mailBody}`;
-    });
+    // Form is handled by Formsubmit.co — no JS needed
   </script>
 </body>
 </html>
