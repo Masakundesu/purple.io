@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CODE N BUTTER | EC特化 Growth SaaS - 広告費を増やさずにCVRを上げる</title>
+  <meta name="description" content="CODE N BUTTER - EC特化のオンサイトマーケティングSaaS。ノーコードで3分作成、月3万円から。韓国4,500社以上の導入実績。CVR+78%改善。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #D4E157;
+      --primary-dark: #C0CA33;
+      --dark: #1A1A2E;
+      --dark-blue: #2D2D5E;
+      --text: #333333;
+      --text-light: #666666;
+      --bg: #F5F5F5;
+      --white: #FFFFFF;
+      --accent: #FF6B35;
+      --gradient-start: #1A1A2E;
+      --gradient-end: #2D2D5E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: box-shadow 0.3s;
+    }
+
+    header.scrolled {
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 14px;
+      color: var(--dark);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .logo-text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--dark);
+      letter-spacing: 0.5px;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .header-nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .header-nav a:hover {
+      color: var(--dark-blue);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26,26,46,0.25);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .btn-accent:hover {
+      background: #e55a28;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,107,53,0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--dark);
+      border: 2px solid var(--dark);
+    }
+
+    .btn-outline:hover {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .btn-header {
+      padding: 10px 24px;
+      font-size: 14px;
+      border-radius: 6px;
+    }
+
+    .btn-large {
+      padding: 18px 48px;
+      font-size: 18px;
+      border-radius: 10px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 140px 0 80px;
+      background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: var(--primary);
+      opacity: 0.08;
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: var(--primary);
+      opacity: 0.05;
+      border-radius: 50%;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,225,87,0.15);
+      border: 1px solid rgba(212,225,87,0.3);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 .highlight {
+      color: var(--primary);
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 40px;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 700px;
+    }
+
+    .hero-stat {
+      text-align: center;
+      padding: 24px 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-stat .number {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .hero-stat .label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section {
+      padding: 100px 0;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--dark-blue);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 17px;
+      color: var(--text-light);
+      max-width: 640px;
+      line-height: 1.8;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-center .section-desc {
+      margin: 0 auto;
+    }
+
+    /* ===== PROBLEMS ===== */
+    .problems {
+      background: var(--bg);
+    }
+
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .problem-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px 32px;
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .problem-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .problem-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-blue) 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+    }
+
+    .problem-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .problem-card .stat {
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--accent);
+      margin: 12px 0;
+    }
+
+    .problem-card p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ===== SOLUTION ===== */
+    .solution-header {
+      margin-bottom: 56px;
+    }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .solution-card {
+      padding: 36px 28px;
+      border-radius: 16px;
+      border: 2px solid rgba(0,0,0,0.06);
+      transition: all 0.3s;
+    }
+
+    .solution-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 8px 32px rgba(212,225,87,0.15);
+    }
+
+    .solution-card .icon-wrap {
+      width: 48px;
+      height: 48px;
+      background: rgba(212,225,87,0.15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .solution-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .solution-card p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ===== FEATURES ===== */
+    .features {
+      background: var(--bg);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .feature-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px 32px;
+      border: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      gap: 20px;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .feature-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .feature-card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ===== RESULTS ===== */
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .result-card {
+      background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+      border-radius: 16px;
+      padding: 40px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .result-card::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      background: var(--primary);
+      opacity: 0.08;
+      border-radius: 50%;
+    }
+
+    .result-card .number {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(40px, 5vw, 56px);
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+
+    .result-card .label {
+      font-size: 16px;
+      color: rgba(255,255,255,0.85);
+      margin-top: 8px;
+      font-weight: 600;
+    }
+
+    .result-card .detail {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+    }
+
+    /* ===== CASE STUDIES ===== */
+    .cases {
+      background: var(--bg);
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+    }
+
+    .case-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .case-tag {
+      display: inline-block;
+      background: rgba(45,45,94,0.08);
+      color: var(--dark-blue);
+      padding: 4px 14px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .case-card h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .case-card .case-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .case-results {
+      display: flex;
+      gap: 20px;
+    }
+
+    .case-result-item {
+      flex: 1;
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .case-result-item .val {
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--dark-blue);
+    }
+
+    .case-result-item .lbl {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
+    /* ===== PROCESS ===== */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--dark-blue));
+      z-index: 0;
+    }
+
+    .step-card {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 80px;
+      height: 80px;
+      background: var(--white);
+      border: 3px solid var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--dark);
+    }
+
+    .step-card h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ===== PRICING ===== */
+    .pricing {
+      background: var(--bg);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .price-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px 32px;
+      border: 2px solid rgba(0,0,0,0.06);
+      text-align: center;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .price-card.featured {
+      border-color: var(--primary);
+      box-shadow: 0 12px 40px rgba(212,225,87,0.2);
+      transform: scale(1.02);
+    }
+
+    .price-card.featured::before {
+      content: 'RECOMMENDED';
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: var(--dark);
+      padding: 4px 20px;
+      border-radius: 0 0 8px 8px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .price-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .price-card .target {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .price-amount {
+      font-family: 'Inter', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .price-amount span {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    .price-features {
+      list-style: none;
+      margin: 24px 0;
+      text-align: left;
+    }
+
+    .price-features li {
+      padding: 8px 0;
+      font-size: 14px;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .price-features li::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: rgba(212,225,87,0.2);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 2px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%231A1A2E' d='M8.5 13.5l-3-3 1-1 2 2 5-5 1 1z'/%3E%3C/svg%3E");
+    }
+
+    /* ===== CLIENTS ===== */
+    .clients-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 48px;
+      opacity: 0.6;
+    }
+
+    .client-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: 1px;
+    }
+
+    /* ===== FAQ ===== */
+    .faq {
+      background: var(--bg);
+    }
+
+    .faq-list {
+      max-width: 760px;
+      margin: 56px auto 0;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+
+    .faq-q {
+      padding: 24px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-q::after {
+      content: '+';
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--text-light);
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-q::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-a-inner {
+      padding: 0 28px 24px;
+      font-size: 15px;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    /* ===== CTA / CONTACT ===== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: var(--primary);
+      opacity: 0.06;
+      border-radius: 50%;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .cta-text h2 {
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.35;
+    }
+
+    .cta-text p {
+      color: rgba(255,255,255,0.7);
+      font-size: 16px;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .cta-benefits {
+      list-style: none;
+    }
+
+    .cta-benefits li {
+      color: rgba(255,255,255,0.8);
+      font-size: 15px;
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cta-benefits li::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+    }
+
+    .contact-form h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .form-group label .required {
+      color: var(--accent);
+      margin-left: 2px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #E8E8E8;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      transition: border-color 0.2s;
+      background: #FAFAFA;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: var(--white);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--dark);
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 8px;
+      font-family: inherit;
+    }
+
+    .form-submit:hover {
+      background: var(--dark-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26,26,46,0.3);
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--text-light);
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      padding: 48px 0 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 48px;
+    }
+
+    .footer-brand .logo-text {
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 48px;
+    }
+
+    .footer-links h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      display: block;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 13px;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ===== FLOATING CTA ===== */
+    .floating-cta {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s;
+    }
+
+    .floating-cta.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .floating-cta .btn {
+      box-shadow: 0 8px 32px rgba(255,107,53,0.4);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 968px) {
+      .header-nav { display: none; }
+
+      .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+
+      .problems-grid,
+      .solution-grid,
+      .results-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .process-steps::before {
+        display: none;
+      }
+
+      .cta-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      .price-card.featured {
+        transform: scale(1);
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .case-results {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+
+      .hero {
+        padding: 120px 0 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">CB</div>
+        <span class="logo-text">CODE N BUTTER</span>
+      </a>
+      <nav class="header-nav">
+        <a href="#problems">課題</a>
+        <a href="#features">機能</a>
+        <a href="#results">導入効果</a>
+        <a href="#pricing">料金</a>
+        <a href="#contact" class="btn btn-primary btn-header">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">EC特化 Growth SaaS</div>
+      <h1>
+        広告費を増やさずに<br>
+        <span class="highlight">ECのCVRを上げる</span>方法
+      </h1>
+      <p class="hero-sub">
+        ノーコード・開発チーム不要。ドラッグ&ドロップで3分作成。<br>
+        マーケターが自ら運用できるオンサイトマーケティングツール。
+      </p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-accent btn-large">無料で相談する</a>
+        <a href="#features" class="btn btn-outline btn-large" style="color:#fff;border-color:rgba(255,255,255,0.3);">機能を見る</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="number">+78%</div>
+          <div class="label">CVR改善</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">+27%</div>
+          <div class="label">売上向上</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number">4,500+</div>
+          <div class="label">韓国導入社数</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMS -->
+  <section class="problems" id="problems">
+    <div class="container text-center">
+      <span class="section-label">EC事業者の課題</span>
+      <h2 class="section-title">こんな課題、抱えていませんか？</h2>
+      <p class="section-desc">
+        広告費の高騰、高いカゴ落ち率、開発リソースの不足。<br>
+        EC事業者が直面する3大課題に、CODE N BUTTERが同時に対処します。
+      </p>
+      <div class="problems-grid">
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path stroke="#D4E157" stroke-width="2" stroke-linecap="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3>広告費は上がるのにCVRが伸びない</h3>
+          <div class="stat">15~20%</div>
+          <p>クリック単価は毎年上昇。訪問者の96%は初回で購入しません。</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path stroke="#D4E157" stroke-width="2" stroke-linecap="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
+          </div>
+          <h3>カゴ落ち率が70%以上</h3>
+          <div class="stat">70%+</div>
+          <p>毎月の機会損失は売上の数十%。購入直前の離脱を防げていません。</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path stroke="#D4E157" stroke-width="2" stroke-linecap="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <h3>施策を打ちたいが開発チーム待ち</h3>
+          <div class="stat">PDCA停滞</div>
+          <p>ポップアップ1つ出すにも開発待ち。スピードが命のECで致命的です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section id="solution">
+    <div class="container text-center">
+      <span class="section-label">CODE N BUTTERの強み</span>
+      <h2 class="section-title">その課題、CODE N BUTTERひとつで<br>解決できます</h2>
+      <p class="section-desc">
+        韓国4,500社以上の導入実績から蓄積されたノウハウで、<br>
+        EC特化のコンバージョン改善を実現します。
+      </p>
+      <div class="solution-grid" style="margin-top:56px;">
+        <div class="solution-card">
+          <div class="icon-wrap">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path stroke="#1A1A2E" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3>5分で導入完了</h3>
+          <p>タグ1行を追加するだけ。サイトパフォーマンスへの影響ゼロ。最短で当日運用開始。</p>
+        </div>
+        <div class="solution-card">
+          <div class="icon-wrap">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path stroke="#1A1A2E" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+          </div>
+          <h3>ノーコードで自由自在</h3>
+          <p>ドラッグ&ドロップで3分作成。マーケターが開発チームを待たずにPDCAを回せます。</p>
+        </div>
+        <div class="solution-card">
+          <div class="icon-wrap">
+            <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path stroke="#1A1A2E" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3>AIで施策を最適化</h3>
+          <p>AI CONIがコピーライティング、背景除去、商品レコメンドを自動化。データドリブンな運用を支援。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">主要機能</span>
+        <h2 class="section-title">オールインワンのEC Growth プラットフォーム</h2>
+        <p class="section-desc">
+          データ収集・分析・キャンペーン実施まで、ひとつのツールで完結。<br>
+          別途ツール購入・連携不要でコスト削減と運用効率向上を実現。
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-num">01</div>
+          <div>
+            <h3>ポップアップ</h3>
+            <p>離脱検知・スクロール深度・滞在時間でスマートに表示。動画対応、A/Bテスト、疲労度管理で最適なタイミングで顧客にリーチ。</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num">02</div>
+          <div>
+            <h3>バナー</h3>
+            <p>ページ内の最適な位置にインラインで自然に挿入。CSSセレクター指定で柔軟配置。UXを損なわず売上に直結。</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num">03</div>
+          <div>
+            <h3>フォーム / アンケート</h3>
+            <p>NPS、星評価、画像選択など10種以上の質問形式。顧客の声を収集しエンゲージメントを高めます。</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num">04</div>
+          <div>
+            <h3>コレクション</h3>
+            <p>商品データ・Instagramフィード・動画を自動挿入。購入履歴に基づくパーソナライズ推薦で客単価向上。</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num">05</div>
+          <div>
+            <h3>パーソナライズターゲティング</h3>
+            <p>30条件以上のセグメントで精密なターゲティング。新規/リピーター、デバイス、カート金額、UTMなど。</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num">06</div>
+          <div>
+            <h3>分析ダッシュボード</h3>
+            <p>露出/クリック/購入/売上をリアルタイム分析。ファネル分析で離脱ポイントを特定し、データドリブンに改善。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results">
+    <div class="container text-center">
+      <span class="section-label">導入効果</span>
+      <h2 class="section-title">数字で証明する、確かな成果</h2>
+      <p class="section-desc">
+        導入企業の実績データに基づく改善効果。
+      </p>
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="number">+78%</div>
+          <div class="label">CVR改善</div>
+          <div class="detail">2.3% → 4.1%</div>
+        </div>
+        <div class="result-card">
+          <div class="number">+27%</div>
+          <div class="label">売上向上</div>
+          <div class="detail">2週間で達成</div>
+        </div>
+        <div class="result-card">
+          <div class="number">-15pt</div>
+          <div class="label">カゴ落ち減少</div>
+          <div class="detail">74% → 63%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="cases">
+    <div class="container text-center">
+      <span class="section-label">導入事例</span>
+      <h2 class="section-title">導入企業の成功ストーリー</h2>
+      <div class="case-grid">
+        <div class="case-card" style="text-align:left;">
+          <span class="case-tag">宿泊プラットフォーム</span>
+          <h3>Stayfolio</h3>
+          <p class="case-desc">ブティック宿泊施設キュレーションプラットフォーム。スマートバナーとターゲティング条件を活用し、顧客ジャーニーを最適化。</p>
+          <div class="case-results">
+            <div class="case-result-item">
+              <div class="val">+246%</div>
+              <div class="lbl">売上増加</div>
+            </div>
+            <div class="case-result-item">
+              <div class="val">+92%</div>
+              <div class="lbl">アプリDL週次成長</div>
+            </div>
+            <div class="case-result-item">
+              <div class="val">+41%</div>
+              <div class="lbl">クーポン発行数</div>
+            </div>
+          </div>
+        </div>
+        <div class="case-card" style="text-align:left;">
+          <span class="case-tag">ファッションEC</span>
+          <h3>KOLONモール</h3>
+          <p class="case-desc">大手ファッションブランドグループのECモール。A/Bテストとデバイス別最適化で、ファーストインプレッションからコンバージョンまでを改善。</p>
+          <div class="case-results">
+            <div class="case-result-item" style="flex:1;">
+              <div class="val">+50%</div>
+              <div class="lbl">前年比成長</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="container text-center">
+      <span class="section-label">導入プロセス</span>
+      <h2 class="section-title">最短で当日導入・当日運用開始</h2>
+      <p class="section-desc">
+        4ステップで簡単に始められます。<br>まずは無料相談からお気軽にどうぞ。
+      </p>
+      <div class="process-steps">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h3>無料相談（約30分）</h3>
+          <p>サイト現状の診断、コンバージョン改善ポイントの提案、最適プランのご推奨</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h3>タグ設置（約5分）</h3>
+          <p>タグ1行を追加するだけ。サイトパフォーマンスへの影響なし</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3>キャンペーン設定</h3>
+          <p>テンプレートから選択、または自由にデザイン。表示条件を設定</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">04</div>
+          <h3>効果測定</h3>
+          <p>ダッシュボードで成果をリアルタイムに確認。A/Bテストで最適化</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container text-center">
+      <span class="section-label">料金プラン</span>
+      <h2 class="section-title">月3万円から、リスクなく始められます</h2>
+      <p class="section-desc">
+        PoC期間中は全機能を無料でご提供。最低契約期間なし。
+      </p>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>スターター</h3>
+          <p class="target">小規模ECサイト</p>
+          <div class="price-amount">3~5<span>万円/月</span></div>
+          <ul class="price-features">
+            <li>基本ポップアップ・バナー</li>
+            <li>A/Bテスト</li>
+            <li>基本ターゲティング</li>
+            <li>メールサポート</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" style="width:100%;">お問い合わせ</a>
+        </div>
+        <div class="price-card featured">
+          <h3>スタンダード</h3>
+          <p class="target">中規模ECサイト</p>
+          <div class="price-amount">10~15<span>万円/月</span></div>
+          <ul class="price-features">
+            <li>全機能利用可能</li>
+            <li>分析・AI CONI含む</li>
+            <li>優先サポート</li>
+            <li>専任マネージャー</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" style="width:100%;">お問い合わせ</a>
+        </div>
+        <div class="price-card">
+          <h3>エンタープライズ</h3>
+          <p class="target">大規模・カスタム要件</p>
+          <div class="price-amount" style="font-size:28px;">別途ご相談</div>
+          <ul class="price-features">
+            <li>無制限セッション</li>
+            <li>専用オンボーディング</li>
+            <li>SLA保証</li>
+            <li>技術支援</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline" style="width:100%;">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section>
+    <div class="container text-center">
+      <span class="section-label">導入企業</span>
+      <h2 class="section-title">Samsung、Hyundaiをはじめ<br>大手企業が信頼するツール</h2>
+      <div class="clients-logos">
+        <span class="client-name">Samsung</span>
+        <span class="client-name">Hyundai</span>
+        <span class="client-name">Amore Pacific</span>
+        <span class="client-name">LG U+</span>
+        <span class="client-name">KOLON MALL</span>
+        <span class="client-name">W.CONCEPT</span>
+        <span class="client-name">Stayfolio</span>
+        <span class="client-name">G/FORE</span>
+        <span class="client-name">Hydro Flask</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container text-center">
+      <span class="section-label">よくあるご質問</span>
+      <h2 class="section-title">FAQ</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">導入までどのくらいかかりますか？</div>
+          <div class="faq-a"><div class="faq-a-inner">タグ設置は5分、最初のポップアップ作成まで30分。当日導入・当日運用開始が可能です。</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">既存ツールと併用できますか？</div>
+          <div class="faq-a"><div class="faq-a-inner">はい。独立して動作するため、既存ツールとの衝突なく併用いただけます。</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">サイト速度に影響しませんか？</div>
+          <div class="faq-a"><div class="faq-a-inner">非同期ローディング方式で影響はほぼありません。軽量スクリプト（数KB）のみです。</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">データセキュリティは大丈夫ですか？</div>
+          <div class="faq-a"><div class="faq-a-inner">データは暗号化して安全に管理しています。個人情報保護法（APPI）基準に準拠しております。</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">解約は自由にできますか？</div>
+          <div class="faq-a"><div class="faq-a-inner">最低契約期間はございません。いつでも解約可能です。PoC期間中の解約でも費用は発生しません。</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">どのECプラットフォームに対応していますか？</div>
+          <div class="faq-a"><div class="faq-a-inner">自社構築サイトとShopifyに対応しております。日本国内カートサービスとの連携も順次開発中です。</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACT -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-text">
+          <h2>まずは無料相談から<br>始めてみませんか？</h2>
+          <p>
+            PoC期間中は全機能を完全無料でお試しいただけます。<br>
+            サイト診断と改善提案を無料で実施します。
+          </p>
+          <ul class="cta-benefits">
+            <li>PoC期間 全機能完全無料</li>
+            <li>最低契約期間なし</li>
+            <li>初期費用なしで試せます</li>
+            <li>日本語サポート対応</li>
+            <li>最短当日導入・当日運用開始</li>
+          </ul>
+        </div>
+        <div class="contact-form">
+          <h3>無料相談のお申し込み</h3>
+          <form id="contactForm" action="#" method="post">
+            <div class="form-row">
+              <div class="form-group">
+                <label>お名前<span class="required">*</span></label>
+                <input type="text" name="name" placeholder="山田 太郎" required>
+              </div>
+              <div class="form-group">
+                <label>会社名<span class="required">*</span></label>
+                <input type="text" name="company" placeholder="株式会社〇〇" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>メールアドレス<span class="required">*</span></label>
+                <input type="email" name="email" placeholder="example@company.com" required>
+              </div>
+              <div class="form-group">
+                <label>電話番号</label>
+                <input type="tel" name="phone" placeholder="03-1234-5678">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>ECサイトURL</label>
+              <input type="url" name="site_url" placeholder="https://your-ec-site.com">
+            </div>
+            <div class="form-group">
+              <label>ご関心のある課題</label>
+              <select name="interest">
+                <option value="">選択してください</option>
+                <option value="cvr">CVR改善</option>
+                <option value="cart">カゴ落ち防止</option>
+                <option value="speed">施策のスピードアップ</option>
+                <option value="cost">広告費の最適化</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>ご質問・ご要望</label>
+              <textarea name="message" placeholder="ご自由にお書きください"></textarea>
+            </div>
+            <button type="submit" class="form-submit">無料相談を申し込む</button>
+            <p class="form-note">※ PoC参加企業数には上限があります。お早めにお申し込みください。</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo" style="margin-bottom:12px;">
+            <div class="logo-icon">CB</div>
+            <span class="logo-text" style="color:#fff;">CODE N BUTTER</span>
+          </div>
+          <p>
+            EC特化のオンサイトマーケティング<br>
+            Growth プラットフォーム<br><br>
+            開発元: Purple IO<br>
+            日本パートナー: A1Growth
+          </p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h4>サービス</h4>
+            <a href="#features">機能一覧</a>
+            <a href="#pricing">料金プラン</a>
+            <a href="#results">導入効果</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <div>
+            <h4>お問い合わせ</h4>
+            <a href="mailto:support@codenbutter.com">support@codenbutter.com</a>
+            <a href="https://www.codenbutter.com" target="_blank" rel="noopener">www.codenbutter.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 CODE N BUTTER by Purple IO. All rights reserved.</p>
+        <p>日本パートナー: A1Growth</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <a href="#contact" class="btn btn-accent">無料相談はこちら</a>
+  </div>
+
+  <script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Floating CTA visibility
+    const floatingCta = document.getElementById('floatingCta');
+    window.addEventListener('scroll', () => {
+      floatingCta.classList.toggle('visible', window.scrollY > 600);
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const answer = item.querySelector('.faq-a');
+        const isActive = item.classList.contains('active');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.faq-a').style.maxHeight = '0';
+        });
+
+        // Open clicked
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          const offset = 80;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Form submit handler — send via mailto
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const f = e.target;
+      const data = {
+        name: f.name.value,
+        company: f.company.value,
+        email: f.email.value,
+        phone: f.phone.value,
+        site_url: f.site_url.value,
+        interest: f.interest.value,
+        message: f.message.value
+      };
+      const body = [
+        `【お名前】${data.name}`,
+        `【会社名】${data.company}`,
+        `【メールアドレス】${data.email}`,
+        `【電話番号】${data.phone || '未記入'}`,
+        `【ECサイトURL】${data.site_url || '未記入'}`,
+        `【ご関心のある課題】${data.interest || '未選択'}`,
+        `【ご質問・ご要望】`,
+        data.message || 'なし'
+      ].join('\n');
+      const subject = encodeURIComponent(`【CODE N BUTTER】お問い合わせ: ${data.company} ${data.name}様`);
+      const mailBody = encodeURIComponent(body);
+      window.location.href = `mailto:codenbutter@a1growth.com?subject=${subject}&body=${mailBody}`;
+    });
+  </script>
+</body>
+</html>
